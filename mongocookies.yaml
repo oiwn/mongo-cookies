@@ -1,0 +1,18 @@
+session_name: mongocookies
+windows:
+  - window_name: code
+    focus: true
+    start-directory: ./
+    panes:
+      - shell_command:
+          - workon scrape
+          - empre
+  - window_name: cmd
+    start-directory: ./
+    panes:
+      - shell_command:
+          - workon scrape
+  - window_name: db
+    panes:
+      - shell_command:
+          - mongo mongocookies
