@@ -1,5 +1,4 @@
 import pprint
-import random
 import logging
 from faker import Factory
 from workout import MongoWorkout
@@ -8,8 +7,8 @@ from workout import MongoWorkout
 logger = logging.getLogger(__name__)
 
 
-class RemoveDuplicates(MongoWorkout):
-    """ Show how to remove duplicates from file
+class FindDuplicates(MongoWorkout):
+    """ Show how to find duplicates from file
     using aggregation pipeline
     """
     name = 'RemoveDuplicates'
@@ -45,7 +44,7 @@ class RemoveDuplicates(MongoWorkout):
 
     def prepare(self):
         fake = Factory.create('en_US')
-        for num in range(0, 10):
+        for num in range(1, 6):
             document = {
                 'number': num,
                 'name': fake.name(),
@@ -53,8 +52,7 @@ class RemoveDuplicates(MongoWorkout):
             doc = self.insert_document(document.copy())
             logger.info("Original: {}".format(doc))
 
-            repeat = random.randint(1, 6)
-            for _ in range(1, repeat):
+            for _ in range(1, num):
                 doc = self.insert_document(document.copy())
                 logger.info("Duplicate: {}".format(doc))
 

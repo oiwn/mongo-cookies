@@ -12,7 +12,7 @@ MONGO_DB_URI = 'mongodb://localhost:27017/{}'.format(MONGO_DB_NAME)
 
 # mapping for tasks
 TASKS = {
-    'remove-duplicates': 'aggregation.remove_duplicates.RemoveDuplicates',
+    'find-duplicates': 'aggregation.find_duplicates.FindDuplicates',
 }
 
 

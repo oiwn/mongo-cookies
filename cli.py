@@ -18,6 +18,7 @@ if __name__ == '__main__':
 
     if args.task:
         cls = module_import(TASKS[args.task])
+        print(cls.__doc__)
         cls()
     else:
         print TASKS.keys()
