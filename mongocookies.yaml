@@ -5,13 +5,13 @@ windows:
     start-directory: ./
     panes:
       - shell_command:
-          - workon scrape
+          - workon mongocookies
           - empre
   - window_name: cmd
     start-directory: ./
     panes:
       - shell_command:
-          - workon scrape
+          - workon mongocookies
   - window_name: db
     panes:
       - shell_command:
