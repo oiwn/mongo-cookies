@@ -10,16 +10,17 @@ class MongoWorkout(object):
 
     def __init__(self):
         self.db = db_connection()
-
         # prepare run and cleanup database
-        self.prepare()
-        self.run()
-        self.cleanup()
+        try:
+            self.prepare()
+            self.run()
+        finally:
+            self.cleanup()
 
     def prepare(self):
         """ Put some data into the database
         """
-        pass
+        raise NotImplemented
 
     def cleanup(self):
         """ Cleanup collection
@@ -28,3 +29,6 @@ class MongoWorkout(object):
 
     def run(self):
         raise NotImplemented("{} is not implemented".format(self.name))
+
+    def insert_document(self, document):
+        return self.db[self.collection].insert_one(document)
