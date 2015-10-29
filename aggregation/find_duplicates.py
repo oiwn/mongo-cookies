@@ -3,7 +3,6 @@ import logging
 from faker import Factory
 from workout import MongoWorkout
 
-
 logger = logging.getLogger(__name__)
 
 
