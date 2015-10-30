@@ -13,6 +13,8 @@ MONGO_DB_URI = 'mongodb://localhost:27017/{}'.format(MONGO_DB_NAME)
 # mapping for tasks
 TASKS = {
     'find-duplicates': 'aggregation.find_duplicates.FindDuplicates',
+    'groupby': 'aggregation.groupby.GroupBySimple',
+    'groupby-nested': 'aggregation.groupby.GroupByNested',
 }
 
 
